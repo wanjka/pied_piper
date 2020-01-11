@@ -1,0 +1,13 @@
+﻿{% extends 'base.html' %}
+{% from '_formhelpers.html' import render_field %}
+{% block content %}
+  <div class='col-9'>
+    <h2>Тут можно вписать песню</h2>
+    <p class='note'>Здесь подразумевается комментарий к выбранному методу ввода</p>
+    <form action="{{ url_for('track.process_form') }}" method='post'>
+    {{ render_field(form.hidden_tag) }}
+    {{ render_field(form.music) }}
+    {{ render_field(form.submit) }}
+    </form>
+  </div> <!-- class='col-9' -->
+{% endblock %}

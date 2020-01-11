@@ -1,0 +1,9 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+  <div class='col-9'>
+  <h2>Получилось вот что</h2>
+    {% for element in response %}
+    <{{ element[0] }}> {{ element[1] }}</{{ element[0] }}>
+    {% endfor %}
+  </div> <!-- class='col-9' -->
+{% endblock %}
