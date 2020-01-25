@@ -19,22 +19,17 @@ def index():
 @bp.route('/process_form', methods=['POST'])
 def process_form():
     form = MusicForm()
-    response = [
-        ('p', 'Ваша музыка'),
-        ('pre', form.music.data),
-        ('p', 'Результаты поиска'),
-    ]
+    title = 'Обработка результатов'
+    results = []
     try:
         results = seargine.get_overlaps(form.music.data)
+        return render_template('track/results.html', page_title=title, response=results)
     except Exception as e:
-        results = e
-    response.append(('pre', results))
-    title = 'Обработка результатов'
-    return render_template(
-            'track/results.html',
-            page_title=title,
-            response=response
-    )
+        print(e)
+        return '1'
+        #results = e
+        #return render_template('track/results.html', page_title=title, response=results)
+
     # (previous version)
     # if form.validate_on_submit():
         # response = [('p', 'Ваша музыка'), ('pre', form.music.data)]

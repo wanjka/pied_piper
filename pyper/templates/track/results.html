@@ -1,9 +1,24 @@
 ﻿{% extends 'base.html' %}
 {% block content %}
   <div class='col-9'>
-  <h2>Получилось вот что</h2>
-    {% for element in response %}
-    <{{ element[0] }}> {{ element[1] }}</{{ element[0] }}>
-    {% endfor %}
+    <table class='table'>
+      <caption>Результаты поиска</caption>
+      <thead>
+        <tr>
+          <th>Номер</th>
+          <th>Название</th>
+          <th>Номер такта</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for line in response %}
+        <tr>
+          <td>{{ line['id'] }}</td>
+          <td>{{ line['trackName'] }}</td>
+          <td>{{ line['measureNumber'] }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   </div> <!-- class='col-9' -->
 {% endblock %}

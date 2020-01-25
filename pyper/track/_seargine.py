@@ -5,6 +5,8 @@
 
  The name 'Seargine' is from 'Search Engine'
 """
+# from music21 import converter, corpus
 
 def get_overlaps(sample):
-    return f'Когда я найду что-то похожее на {sample}, я перезвоню'
+    test_blob = [{'id': 1, 'trackName': 'MonaLisa', 'measureNumber': 22}]
+    return test_blob
