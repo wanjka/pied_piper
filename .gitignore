@@ -1,6 +1,13 @@
 .vscode
 mus/
 
+# The directory with uploaded files
+uploads/
+
+# Editor files
+.vscode/
+.*.swp  # vim swap files
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

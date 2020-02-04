@@ -1,0 +1,31 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+  <div class='col-9'>
+    <table class='table'>
+     <!-- <div>Ищем: {{ sample }}
+     </div>-->
+      <thead>
+        <tr>
+          <th>Номер</th>
+          <th>Название</th>
+          <th>Композитор</th>
+          <th>Номер такта</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for line in response %}
+        <tr>
+          <td>{{ line['id'] }}</td>
+          <td>{{ line['trackName'] }}</td>
+          <td>{{ line['composer'] }}</td>
+          <td>
+		  {% for num in line['measureNumber'] %}
+		  {{ num }}
+		  {% endfor %}
+	  </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div> <!-- class='col-9' -->
+{% endblock %}
