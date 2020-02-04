@@ -11,3 +11,4 @@ it does this by using the notes with the big database of various compositions
 1. Download or clone this repo
 2. Install requirements (for example `pip install -r requirements.txt`)
 3. Run server (`source run.sh` or `chmod +r run.sh && /.run.sh`)
+4. Go to `localhost:5000` in your browser
